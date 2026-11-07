@@ -1,0 +1,1025 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffb6d5">
+<title>Happy Birthday Sayurii 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --pink: #ff4f9a;
+    --light: #ffe2ef;
+    --deep: #a91e62;
+    --gold: #f8d58b;
+    --white: #fffafd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: #210b19;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+#fireworks {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(circle at 20% 20%, #8e285d 0, transparent 40%),
+      radial-gradient(circle at 80% 80%, #6b2452 0, transparent 40%),
+      linear-gradient(135deg,#170813,#42152e,#210b19);
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#ffffff88 1px,transparent 1px);
+    background-size: 45px 45px;
+    opacity: .25;
+}
+
+section {
+    padding: 90px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.eyebrow {
+    color: var(--gold);
+    letter-spacing: 6px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(65px, 12vw, 125px);
+    color: #ffb7d5;
+    text-shadow: 0 0 20px #ff4f9a, 0 0 55px #ff4f9a88;
+    animation: titleGlow 3s infinite alternate;
+}
+
+@keyframes titleGlow {
+    from { text-shadow: 0 0 15px #ff4f9a; }
+    to { text-shadow: 0 0 40px #ff4f9a, 0 0 80px #ffb6d5; }
+}
+
+.hero h2 {
+    font-family: 'Playfair Display',serif;
+    letter-spacing: 5px;
+    font-size: clamp(16px, 3vw, 25px);
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.hero p {
+    margin-top: 20px;
+    color: #ffd5e7;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.hero-heart {
+    font-size: 65px;
+    margin: 30px;
+    animation: heartbeat 1.5s infinite;
+    filter: drop-shadow(0 0 20px #ff4f9a);
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.btn {
+    padding: 15px 32px;
+    border-radius: 40px;
+    border: 1px solid #ffb6d5;
+    background: linear-gradient(135deg,#ff4f9a,#b52c70);
+    color: white;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin: 12px;
+    box-shadow: 0 5px 30px #ff4f9a55;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 10px 35px #ff4f9a99;
+}
+
+.section-title {
+    font-family: 'Great Vibes',cursive;
+    font-size: clamp(45px,8vw,75px);
+    color: #ffb6d5;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px #ff4f9a77;
+}
+
+.section-sub {
+    color: #e9bfd0;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+/* COUNTDOWN */
+
+.countdown-box {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.time {
+    width: 100px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #ff9fc5;
+    border-radius: 18px;
+    background: linear-gradient(145deg,#6d2549aa,#321323aa);
+    box-shadow: 0 0 25px #ff4f9a22;
+    backdrop-filter: blur(10px);
+}
+
+.time strong {
+    font-size: 32px;
+    color: #ffd1e5;
+}
+
+.time span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+.date-control {
+    margin-top: 30px;
+    color: #ffd5e7;
+    font-size: 12px;
+}
+
+.date-control input {
+    display: block;
+    margin: 12px auto;
+    padding: 12px;
+    background: #42152e;
+    border: 1px solid #ff9fc5;
+    color: white;
+    border-radius: 10px;
+    color-scheme: dark;
+}
+
+/* 3D CAKE */
+
+.cake-scene {
+    perspective: 900px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cake {
+    position: relative;
+    width: 220px;
+    height: 180px;
+    transform-style: preserve-3d;
+    animation: cakeFloat 4s ease-in-out infinite;
+}
+
+@keyframes cakeFloat {
+    0%,100% { transform: translateY(0) rotateX(4deg); }
+    50% { transform: translateY(-12px) rotateX(-4deg); }
+}
+
+.cake-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 220px;
+    height: 80px;
+    border-radius: 10px 10px 22px 22px;
+    background: linear-gradient(90deg,#bd376e,#ff9bc3 50%,#c83c78);
+    box-shadow: 0 18px 35px #0008;
+}
+
+.cake-middle {
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+    width: 180px;
+    height: 65px;
+    border-radius: 10px 10px 15px 15px;
+    background: linear-gradient(90deg,#f4a1c3,#fff0f6,#ed8db6);
+}
+
+.cake-top {
+    position: absolute;
+    bottom: 125px;
+    left: 40px;
+    width: 140px;
+    height: 48px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse,#fff0f6,#ffb1d0 75%);
+    box-shadow: 0 5px 12px #7b2448;
+}
+
+.icing {
+    position: absolute;
+    bottom: 95px;
+    left: 20px;
+    width: 180px;
+    height: 22px;
+    border-radius: 10px 10px 50% 50%;
+    background: #fff0f6;
+}
+
+.candle {
+    position: absolute;
+    bottom: 167px;
+    left: 105px;
+    height: 48px;
+    width: 10px;
+    background: repeating-linear-gradient(45deg,#fff,#fff 5px,#ff4f9a 5px,#ff4f9a 10px);
+    border-radius: 5px;
+}
+
+.flame {
+    position: absolute;
+    bottom: 212px;
+    left: 103px;
+    width: 15px;
+    height: 24px;
+    background: radial-gradient(ellipse at bottom,#fff,#ffd45e 35%,#ff702e 70%);
+    border-radius: 50% 50% 40% 40%;
+    filter: drop-shadow(0 0 15px #ffb000);
+    animation: flicker .3s infinite alternate;
+}
+
+@keyframes flicker {
+    from { transform: scale(.85) rotate(-5deg); }
+    to { transform: scale(1.1) rotate(5deg); }
+}
+
+.cake-bottom::before {
+    content: "♥  ♥  ♥  ♥";
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    color: #ffe4ef;
+    letter-spacing: 12px;
+}
+
+/* GIFT */
+
+.gift-container {
+    margin: 40px auto;
+    width: 180px;
+    height: 170px;
+    position: relative;
+    cursor: pointer;
+    perspective: 600px;
+}
+
+.gift-box {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 160px;
+    height: 120px;
+    background: linear-gradient(135deg,#ff77ac,#bd286d);
+    border-radius: 5px;
+    box-shadow: 0 15px 35px #0007;
+}
+
+.gift-box::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    left: 67px;
+    background: linear-gradient(90deg,#f8d58b,#fff1c5,#e8b65b);
+}
+
+.gift-lid {
+    position: absolute;
+    width: 180px;
+    height: 35px;
+    left: 0;
+    bottom: 115px;
+    background: linear-gradient(135deg,#ff9ac3,#e73b88);
+    border-radius: 7px;
+    z-index: 2;
+    transition: transform .8s;
+    transform-origin: left bottom;
+}
+
+.gift-lid::after {
+    content: "🎀";
+    position: absolute;
+    font-size: 40px;
+    left: 70px;
+    top: -30px;
+}
+
+.gift-container.open .gift-lid {
+    transform: rotate(-115deg) translateY(-40px);
+}
+
+.gift-message {
+    display: none;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 25px;
+    border: 1px solid #ffb6d5;
+    background: #ffffff13;
+    backdrop-filter: blur(15px);
+    line-height: 2;
+    color: #ffe3ef;
+    animation: reveal 1s;
+}
+
+.gift-message.show {
+    display: block;
+}
+
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(30px) scale(.8); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* LETTER */
+
+.letter {
+    max-width: 720px;
+    margin: auto;
+    padding: 45px 35px;
+    background: linear-gradient(145deg,#fff1f6,#f8c8dd);
+    color: #79264d;
+    border-radius: 8px;
+    box-shadow: 0 15px 60px #0006;
+    position: relative;
+    line-height: 2.2;
+    text-align: left;
+    transform: rotate(-1deg);
+}
+
+.letter::before {
+    content: "♡";
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 45px;
+    color: #ff75a9;
+}
+
+.letter h3 {
+    font-family: 'Great Vibes',cursive;
+    font-size: 43px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #c72c70;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 25px;
+    font-family: 'Great Vibes',cursive;
+    font-size: 35px;
+    color: #c72c70;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 40px 15px;
+    text-align: center;
+    color: #ffd1e5;
+    border-top: 1px solid #ff9fc533;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* HEARTS */
+
+.heart {
+    position: fixed;
+    bottom: -50px;
+    z-index: 1;
+    pointer-events: none;
+    animation: floatHeart linear forwards;
+    opacity: .85;
+}
+
+@keyframes floatHeart {
+    to {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width:600px) {
+    section { padding: 65px 15px; }
+    .letter { padding: 35px 22px; font-size: 13px; }
+    .time { width: 75px; height: 90px; }
+    .time strong { font-size: 25px; }
+    .cake-scene { transform: scale(.85); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<canvas id="fireworks"></canvas>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="eyebrow">A SPECIAL DAY FOR SOMEONE SPECIAL</div>
+
+    <h1>Happy Birthday</h1>
+
+    <h2>MY DEAREST SAYURII</h2>
+
+    <div class="hero-heart">💗</div>
+
+    <p>TO MY BEAUTIFUL 2ND MOM</p>
+
+    <p>Today, the whole world celebrates YOU ✨</p>
+
+    <button class="btn" onclick="scrollToSection('countdown')">
+        EXPLORE YOUR SURPRISE ↓
+    </button>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section id="countdown">
+
+    <h2 class="section-title">The Special Moment</h2>
+
+    <p class="section-sub">COUNTING DOWN TO YOUR BEAUTIFUL DAY</p>
+
+    <div class="countdown-box">
+
+        <div class="time">
+            <strong id="days">00</strong>
+            <span>DAYS</span>
+        </div>
+
+        <div class="time">
+            <strong id="hours">00</strong>
+            <span>HOURS</span>
+        </div>
+
+        <div class="time">
+            <strong id="minutes">00</strong>
+            <span>MINUTES</span>
+        </div>
+
+        <div class="time">
+            <strong id="seconds">00</strong>
+            <span>SECONDS</span>
+        </div>
+
+    </div>
+
+    <div class="date-control">
+        Set Sayurii's birthday date to activate the countdown.
+
+        <input type="date" id="birthdayDate">
+
+        <p id="countdownStatus">Waiting for your special date 💗</p>
+    </div>
+
+</section>
+
+<!-- CAKE -->
+
+<section id="cake">
+
+    <h2 class="section-title">A Cake Just For You</h2>
+
+    <p class="section-sub">MAKE A WISH, BEAUTIFUL SOUL ✨</p>
+
+    <div class="cake-scene">
+
+        <div class="cake">
+
+            <div class="cake-bottom"></div>
+
+            <div class="cake-middle"></div>
+
+            <div class="icing"></div>
+
+            <div class="cake-top"></div>
+
+            <div class="candle"></div>
+
+            <div class="flame" id="flame"></div>
+
+        </div>
+
+    </div>
+
+    <p style="color:#ffd5e7">
+        May all your wishes come true! 🎂
+    </p>
+
+    <button class="btn" onclick="blowCandle()">
+        ✨ BLOW THE CANDLE
+    </button>
+
+    <p id="candleMessage" style="margin-top:15px;color:#ffd5e7"></p>
+
+</section>
+
+<!-- GIFT -->
+
+<section id="gift">
+
+    <h2 class="section-title">A Little Surprise</h2>
+
+    <p class="section-sub">SOMETHING SPECIAL IS WAITING FOR YOU</p>
+
+    <div class="gift-container" id="giftBox" onclick="openGift()">
+
+        <div class="gift-box"></div>
+
+        <div class="gift-lid"></div>
+
+    </div>
+
+    <button class="btn" onclick="openGift()">
+        🎁 OPEN YOUR GIFT
+    </button>
+
+    <div class="gift-message" id="giftMessage">
+
+        <h2 style="font-family:'Great Vibes';font-size:45px;color:#ffb6d5">
+            Surprise, Sayurii! 💗
+        </h2>
+
+        <br>
+
+        You are a blessing, a beautiful soul,
+        and one of the most precious people in my life.
+
+        <br><br>
+
+        Thank you for being my second mom.
+        Your love, kindness and care mean more than words can ever express.
+
+        <br><br>
+
+        You deserve a lifetime of happiness!
+
+        <br><br>
+
+        🌸 LOVE YOU FOREVER 🌸
+
+        <div style="font-size:40px;margin-top:15px">
+            💗 🎀 🌷
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LETTER -->
+
+<section id="letter">
+
+    <h2 class="section-title">A Letter For You</h2>
+
+    <p class="section-sub">WORDS FROM THE HEART ❤️</p>
+
+    <div class="letter">
+
+        <h3>Dear Sayurii,</h3>
+
+        Happy Birthday to someone who holds such a special
+        place in my heart.
+
+        <br><br>
+
+        You are more than just a wonderful person.
+        You are someone who brings happiness, warmth
+        and love into the lives of the people around you.
+
+        <br><br>
+
+        I want you to know how much you mean to me.
+        Thank you for your kindness, your support,
+        your beautiful heart and all those little things
+        that make you so special.
+
+        <br><br>
+
+        I hope this new chapter of your life brings you
+        endless smiles, good health, beautiful memories,
+        success and everything your heart wishes for.
+
+        <br><br>
+
+        Never stop smiling. Never stop shining.
+        You deserve all the happiness in this universe.
+
+        <br><br>
+
+        Thank you for being my SECOND MOM.
+
+        <br><br>
+
+        Happy Birthday once again, my precious Sayurii! ❤️
+
+        <div class="signature">
+            With Lots of Love, 💗
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ENDING -->
+
+<section>
+
+    <div style="font-size:65px">💗🌸🦋</div>
+
+    <h2 class="section-title">You Are Special</h2>
+
+    <p class="section-sub">
+        MAY YOUR LIFE ALWAYS BE AS BEAUTIFUL AS YOUR HEART
+    </p>
+
+    <h2 style="font-family:'Great Vibes';font-size:45px;color:#ffb6d5">
+        Happy Birthday Sayurii!
+    </h2>
+
+    <button class="btn" onclick="startFireworks()">
+        🎆 CELEBRATE AGAIN
+    </button>
+
+</section>
+
+<footer>
+    MADE WITH ENDLESS LOVE FOR SAYURII 💗
+    <br><br>
+    FOREVER YOUR 2ND MOM 🌷
+</footer>
+
+<script>
+
+/* SMOOTH SCROLL */
+
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+/* HEART ANIMATION */
+
+const hearts = ["💗","💕","💖","❤️","🌸","✨","💘"];
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.textContent =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+
+    const duration = 5 + Math.random() * 6;
+
+    heart.style.animationDuration = duration + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), duration * 1000);
+}
+
+setInterval(createHeart, 400);
+
+/* COUNTDOWN */
+
+const dateInput = document.getElementById("birthdayDate");
+
+let targetDate = null;
+
+dateInput.addEventListener("change", () => {
+
+    if (!dateInput.value) return;
+
+    const parts = dateInput.value.split("-").map(Number);
+
+    targetDate = new Date(
+        parts[0], parts[1] - 1, parts[2], 0, 0, 0
+    );
+
+    if (targetDate <= new Date()) {
+        document.getElementById("countdownStatus").textContent =
+            "This birthday date has arrived or passed! 🎂";
+    } else {
+        document.getElementById("countdownStatus").textContent =
+            "The countdown to Sayurii's special day is ON! 💗";
+    }
+
+    updateCountdown();
+
+});
+
+function updateCountdown() {
+
+    if (!targetDate) return;
+
+    let difference = targetDate - new Date();
+
+    if (difference <= 0) {
+
+        ["days","hours","minutes","seconds"].forEach(id => {
+            document.getElementById(id).textContent = "00";
+        });
+
+        document.getElementById("countdownStatus").textContent =
+            "HAPPY BIRTHDAY SAYURII! 🎉💗";
+
+        return;
+    }
+
+    const days = Math.floor(difference / 86400000);
+    const hours = Math.floor((difference / 3600000) % 24);
+    const minutes = Math.floor((difference / 60000) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+
+}
+
+setInterval(updateCountdown, 1000);
+
+/* CANDLE */
+
+let candleBlown = false;
+
+function blowCandle() {
+
+    if (candleBlown) {
+
+        document.getElementById("flame").style.display = "block";
+
+        document.getElementById("candleMessage").textContent =
+            "Your candle is shining again! 🕯️";
+
+        candleBlown = false;
+
+        return;
+    }
+
+    document.getElementById("flame").style.display = "none";
+
+    document.getElementById("candleMessage").textContent =
+        "Your wish is on its way to come true! 💗✨";
+
+    candleBlown = true;
+
+    startFireworks();
+}
+
+/* GIFT OPEN */
+
+let giftOpened = false;
+
+function openGift() {
+
+    if (giftOpened) return;
+
+    giftOpened = true;
+
+    document.getElementById("giftBox").classList.add("open");
+
+    setTimeout(() => {
+
+        document.getElementById("giftMessage")
+            .classList.add("show");
+
+        document.getElementById("giftMessage")
+            .scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        startFireworks();
+
+    }, 700);
+
+}
+
+/* FIREWORKS */
+
+const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+let fireworksActive = false;
+let animationFrame;
+
+function resizeCanvas() {
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    canvas.width = innerWidth * dpr;
+    canvas.height = innerHeight * dpr;
+
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+}
+
+resizeCanvas();
+
+window.addEventListener("resize", resizeCanvas);
+
+function createFirework(x,y) {
+
+    const colors = [
+        "#ff4f9a",
+        "#ffd58b",
+        "#ffffff",
+        "#ff9acb",
+        "#cba6ff"
+    ];
+
+    const color = colors[
+        Math.floor(Math.random() * colors.length)
+    ];
+
+    for(let i = 0; i < 65; i++) {
+
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 5 + 1;
+
+        particles.push({
+
+            x: x,
+            y: y,
+
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+
+            alpha: 1,
+
+            size: Math.random() * 3 + 1,
+
+            color: color
+
+        });
+
+    }
+}
+
+function startFireworks() {
+
+    fireworksActive = true;
+
+    for(let i = 0; i < 5; i++) {
+
+        createFirework(
+            Math.random() * innerWidth,
+            Math.random() * innerHeight * .65
+        );
+
+    }
+
+    if (!animationFrame) {
+        animateFireworks();
+    }
+
+}
+
+function animateFireworks() {
+
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+
+    if(fireworksActive && Math.random() < .045) {
+
+        createFirework(
+            Math.random() * innerWidth,
+            Math.random() * innerHeight * .65
+        );
+
+    }
+
+    particles.forEach((p,index) => {
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        p.vy += .035;
+
+        p.alpha -= .012;
+
+        ctx.globalAlpha = Math.max(0,p.alpha);
+
+        ctx.fillStyle = p.color;
+
+        ctx.beginPath();
+
+        ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+
+        ctx.fill();
+
+        if(p.alpha <= 0) {
+            particles.splice(index,1);
+        }
+
+    });
+
+    ctx.globalAlpha = 1;
+
+    if(fireworksActive || particles.length > 0) {
+
+        animationFrame = requestAnimationFrame(animateFireworks);
+
+    } else {
+
+        animationFrame = null;
+
+        ctx.clearRect(0,0,innerWidth,innerHeight);
+
+    }
+
+}
+
+/* Stop continuous fireworks after a short celebration */
+
+function celebrationTimeout() {
+    fireworksActive = false;
+}
+
+/* Initial welcome celebration */
+
+setTimeout(startFireworks, 1200);
+
+setTimeout(celebrationTimeout, 5500);
+
+</script>
+
+</body>
+</html>
