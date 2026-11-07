@@ -1,23 +1,412 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Our Little Forever</title><style>
-:root{--pink:#ff6fae;--deep:#7c315c;--cream:#fff8fb;--ink:#382536}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--cream)}
-a{color:inherit;text-decoration:none}.btn{display:inline-block;background:var(--pink);color:white;padding:13px 23px;border-radius:999px;font-weight:700;box-shadow:0 8px 24px #ff6fae44}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7%;background:#fff9;backdrop-filter:blur(10px);position:sticky;top:0;z-index:3}
-.logo{font-weight:900;letter-spacing:1px;color:var(--deep)}.hero{min-height:78vh;display:grid;place-items:center;text-align:center;padding:70px 8%;background:radial-gradient(circle at 20% 20%,#ffe0ee,transparent 35%),radial-gradient(circle at 80% 70%,#f2dcff,transparent 35%)}
-.hero h1{font-size:clamp(2.6rem,7vw,5.7rem);line-height:1.04;margin:14px auto;color:var(--deep);max-width:900px}
-.hero p{font-size:1.12rem;max-width:650px;margin:20px auto 30px;line-height:1.7}
-.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:.78rem;font-weight:800;color:#c05288}
-section{padding:70px 8%;text-align:center}.section-title{font-size:2.2rem;color:var(--deep);margin:0 0 12px}.muted{color:#806b7b;line-height:1.7}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1050px;margin:35px auto}
-.card{background:white;padding:28px;border-radius:24px;box-shadow:0 12px 35px #7c315c12}.emoji{font-size:2.5rem}.card h3{color:var(--deep)}
-.note{max-width:760px;margin:30px auto;background:white;padding:35px;border-radius:26px;box-shadow:0 12px 35px #7c315c12;line-height:1.8}
-footer{text-align:center;padding:28px;background:#4b2943;color:#fff}
-.heart{position:fixed;bottom:-30px;animation:rise 7s linear infinite;opacity:.7;pointer-events:none}
-@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
-@media(max-width:600px){nav{padding:16px 5%}section{padding:55px 6%}.hero{min-height:70vh}}
- .hero{background:linear-gradient(135deg,#ffe7ef,#fff7f1,#f2e4ff)}.hero h1{font-family:Georgia,serif;font-weight:500} .timeline{max-width:800px;margin:35px auto;text-align:left}.moment{padding:20px 25px;border-left:3px solid #f28bb8;margin:18px 0;background:white;border-radius:0 18px 18px 0}</style></head><body>
-<nav><div class="logo">OUR LITTLE FOREVER ♡</div><a href="#story">Our story</a></nav>
-<header class="hero"><div><div class="eyebrow">Another chapter together</div><h1>Every love story<br>is beautiful. Ours is<br>my favourite.</h1><p>One more year of memories, laughter, lessons and choosing each other. Here's to us. 🥂</p><a class="btn" href="#story">Remember with me</a></div></header>
-<section id="story"><div class="eyebrow">The little things became everything</div><h2 class="section-title">Our story so far</h2><div class="timeline"><div class="moment"><b>♡ The beginning</b><p class="muted">The first hello that turned into something beautiful.</p></div><div class="moment"><b>♡ The memories</b><p class="muted">All the laughs, late-night talks and moments we keep close.</p></div><div class="moment"><b>♡ Today & always</b><p class="muted">Still grateful for you, and excited for everything ahead.</p></div></div></section>
-<section><div class="note"><div class="emoji">💌</div><h2 class="section-title">To my favourite person</h2><p>Thank you for making ordinary days feel special. I don't need a perfect story; I'm happy building ours, one day at a time. Happy Anniversary!</p></div></section>
-<footer>Still you. Still me. Still us. ♡</footer></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Princess ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#ffe0ed,#ffb6d2,#fff0f6);
+    color: #8d315d;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.hearts span {
+    position: fixed;
+    bottom: -50px;
+    font-size: 22px;
+    animation: float 9s linear infinite;
+    opacity: .6;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0); opacity: 0; }
+    20% { opacity: .7; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+section {
+    min-height: 100vh;
+    padding: 65px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(55px,10vw,95px);
+    color: #e64b91;
+    text-shadow: 0 5px 15px #ff9fc9;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #a04470;
+}
+
+.anime {
+    width: min(390px, 90vw);
+    margin: 30px auto;
+    filter: drop-shadow(0 15px 20px #df76a566);
+    animation: animeFloat 3s ease-in-out infinite;
+}
+
+@keyframes animeFloat {
+    50% { transform: translateY(-12px); }
+}
+
+.btn {
+    background: linear-gradient(45deg,#ff4f98,#ff8dbb);
+    color: white;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px #e85b9b55;
+    transition: .3s;
+    margin-top: 25px;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+}
+
+.card {
+    max-width: 650px;
+    width: 95%;
+    padding: 40px 25px;
+    background: #ffffffa8;
+    backdrop-filter: blur(15px);
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px #cf649533;
+}
+
+.card h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+    color: #e64b91;
+    margin-bottom: 20px;
+}
+
+.card p {
+    line-height: 2;
+    font-size: 15px;
+}
+
+.cake {
+    font-size: 100px;
+    animation: bounce 1.5s infinite;
+    margin: 20px;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-15px); }
+}
+
+.message {
+    font-family: 'Great Vibes', cursive;
+    font-size: 43px;
+    color: #e64b91;
+    margin: 20px;
+}
+
+footer {
+    padding: 30px;
+    font-size: 13px;
+    color: #a04470;
+}
+
+#surprise {
+    display: none;
+    margin-top: 25px;
+    font-size: 22px;
+    line-height: 1.8;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<!-- HOME -->
+<section>
+
+<p>🌸 A Special Day For Someone Special 🌸</p>
+
+<h1>Happy Birthday</h1>
+
+<h1>Princess ❤️</h1>
+
+<p class="subtitle">
+Today is all about you, my beautiful girl.
+</p>
+
+<!-- Original anime-style illustration -->
+<svg class="anime" viewBox="0 0 400 330"
+xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+ <linearGradient id="bg" x2="1" y2="1">
+  <stop stop-color="#ffd1e4"/>
+  <stop offset="1" stop-color="#fff0f7"/>
+ </linearGradient>
+ <linearGradient id="hair" x2="1" y2="1">
+  <stop stop-color="#573047"/>
+  <stop offset="1" stop-color="#a84e77"/>
+ </linearGradient>
+ <linearGradient id="dress" x2="0" y2="1">
+  <stop stop-color="#ff9fc9"/>
+  <stop offset="1" stop-color="#e94f91"/>
+ </linearGradient>
+</defs>
+
+<rect x="5" y="5" width="390" height="320"
+rx="35" fill="url(#bg)"/>
+
+<!-- Sparkles -->
+<g fill="#fff">
+ <path d="M50 65 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5z"/>
+ <path d="M330 60 l4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4z"/>
+ <path d="M340 220 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/>
+</g>
+
+<!-- Boy body -->
+<path d="M85 300 Q90 210 160 220 L200 300Z"
+fill="#7596b9"/>
+
+<!-- Girl body -->
+<path d="M205 300 Q220 210 290 220 L330 300Z"
+fill="url(#dress)"/>
+
+<!-- Boy hair -->
+<path d="M105 145 Q75 45 165 55 Q220 45 215 120
+L185 155 L120 160Z" fill="url(#hair)"/>
+
+<!-- Boy face -->
+<ellipse cx="157" cy="153" rx="46" ry="58"
+fill="#f5c29e"/>
+
+<!-- Boy hair fringe -->
+<path d="M112 128 Q105 75 170 75 Q211 77 202 128
+Q185 101 162 112 Q135 91 112 128"
+fill="#493044"/>
+
+<!-- Boy eye -->
+<path d="M168 153 Q180 145 190 153"
+stroke="#48303b" stroke-width="3" fill="none"/>
+
+<!-- Boy nose and mouth -->
+<path d="M190 166 Q195 171 187 174"
+stroke="#b76a6a" fill="none" stroke-width="2"/>
+
+<!-- Girl hair -->
+<path d="M204 151 Q184 60 274 60 Q350 65 328 170
+L322 260 Q290 285 286 185 L235 190Z"
+fill="#6b354e"/>
+
+<!-- Girl face -->
+<ellipse cx="271" cy="153" rx="43" ry="55"
+fill="#ffd2b8"/>
+
+<!-- Girl hair fringe -->
+<path d="M228 125 Q225 80 275 78 Q322 80 319 130
+Q300 105 278 115 Q255 105 228 125"
+fill="#6b354e"/>
+
+<!-- Girl closed eyes -->
+<path d="M230 151 Q242 160 252 151"
+stroke="#603449" stroke-width="3" fill="none"/>
+<path d="M288 151 Q300 160 310 151"
+stroke="#603449" stroke-width="3" fill="none"/>
+
+<!-- Girl blush -->
+<ellipse cx="237" cy="173" rx="12" ry="6" fill="#fa929d" opacity=".5"/>
+<ellipse cx="304" cy="173" rx="12" ry="6" fill="#fa929d" opacity=".5"/>
+
+<!-- Boy hand around girl -->
+<path d="M170 229 Q220 193 252 216"
+stroke="#f5c29e" stroke-width="16" fill="none"
+stroke-linecap="round"/>
+
+<!-- Heart -->
+<path d="M196 80 C170 55 145 89 196 124
+C247 89 222 55 196 80Z"
+fill="#ff4f98"/>
+
+<text x="200" y="305" text-anchor="middle"
+font-size="15" fill="#a04470">
+Forever Together ♡
+</text>
+</svg>
+
+<p class="subtitle">
+You are my favourite person in this world. 💕
+</p>
+
+<button class="btn" onclick="document.getElementById('birthday').scrollIntoView({behavior:'smooth'})">
+Open Your Birthday Gift 🎁
+</button>
+
+</section>
+
+<!-- BIRTHDAY -->
+<section id="birthday">
+
+<div class="card">
+
+<div class="cake">🎂</div>
+
+<h2>Happy Birthday, Theekshana!</h2>
+
+<p>
+May your beautiful smile shine brighter every day.
+May your dreams come true and your life
+be filled with endless happiness.
+</p>
+
+<div class="message">
+You deserve all the love in the world ❤️
+</div>
+
+</div>
+
+</section>
+
+<!-- LOVE LETTER -->
+<section>
+
+<div class="card">
+
+<h2>My Little Princess 💌</h2>
+
+<p>
+Dear Princess,<br><br>
+
+You are the sweetest part of my world.
+Your smile makes my days brighter,
+and your happiness means everything.
+
+I hope this birthday brings you
+beautiful memories, endless smiles,
+and everything your heart wishes for.
+
+Keep smiling, keep shining,
+and never stop being the beautiful
+person you are.
+
+<br><br>
+With lots of love ❤️
+</p>
+
+<button class="btn" onclick="showSurprise()">
+One Last Surprise 💗
+</button>
+
+<div id="surprise">
+💕 I LOVE YOU PRINCESS 💕
+<br>
+You will always be special to me.
+<br>
+Forever & Always ♾️
+</div>
+
+</div>
+
+</section>
+
+<footer>
+Made with ❤️ just for Princess
+<br>
+Happy Birthday, Theekshana! 🌷
+</footer>
+
+<script>
+
+// Floating hearts
+const heartContainer = document.getElementById('hearts');
+
+const symbols = ['💗','💕','💖','🌸','💞','✨'];
+
+for(let i=0; i<30; i++){
+    const heart = document.createElement('span');
+    heart.innerHTML = symbols[Math.floor(Math.random()*symbols.length)];
+    heart.style.left = Math.random()*100+'%';
+    heart.style.animationDuration = (5+Math.random()*8)+'s';
+    heart.style.animationDelay = Math.random()*8+'s';
+    heart.style.fontSize = (15+Math.random()*20)+'px';
+    heartContainer.appendChild(heart);
+}
+
+// Surprise message
+function showSurprise(){
+    document.getElementById('surprise').style.display='block';
+    launchConfetti();
+}
+
+// Confetti hearts
+function launchConfetti(){
+    for(let i=0;i<45;i++){
+        const item=document.createElement('div');
+        item.innerHTML=['❤️','💗','✨','🌸'][Math.floor(Math.random()*4)];
+        item.style.position='fixed';
+        item.style.left=Math.random()*100+'vw';
+        item.style.top='-30px';
+        item.style.fontSize='25px';
+        item.style.zIndex='100';
+        item.style.pointerEvents='none';
+        document.body.appendChild(item);
+
+        const duration=2000+Math.random()*2000;
+        const start=performance.now();
+
+        function animate(now){
+            const progress=Math.min((now-start)/duration,1);
+            item.style.top=(progress*110)+'vh';
+            item.style.transform=`rotate(${progress*500}deg)`;
+            item.style.opacity=1-progress;
+
+            if(progress<1){
+                requestAnimationFrame(animate);
+            }else{
+                item.remove();
+            }
+        }
+
+        requestAnimationFrame(animate);
+    }
+}
+
+</script>
+
+</body>
+</html>
