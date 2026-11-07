@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Princess ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg,
+        #ffb6d9, #e8b6ff, #ffc5e5);
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: #ff69b4;
+    filter: blur(120px);
+    opacity: .4;
+    border-radius: 50%;
+    top: 10%;
+    left: 30%;
+}
+
+h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    color: white;
+    text-shadow: 0 0 15px #ff1493;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff1493; }
+    to { text-shadow: 0 0 30px #fff, 0 0 45px #ff1493; }
+}
+
+.subtitle {
+    font-size: 19px;
+    margin: 20px 0;
+    color: #fff;
+}
+
+.name {
+    font-size: 35px;
+    color: #fff;
+    margin: 15px;
+    font-style: italic;
+}
+
+.cake {
+    font-size: 110px;
+    margin: 20px;
+    animation: bounce 2s infinite;
+    filter: drop-shadow(0 0 15px #ff69b4);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+}
+
+.message {
+    max-width: 550px;
+    padding: 25px;
+    background: rgba(255,255,255,.2);
+    border: 1px solid rgba(255,255,255,.5);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    line-height: 1.8;
+    font-size: 17px;
+    box-shadow: 0 10px 35px rgba(255,20,147,.2);
+    margin: 20px;
+}
+
+button {
+    padding: 15px 32px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg,#ff1493,#c850c0);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #ff69b4;
+    transition: .3s;
+    margin: 12px;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#surprise {
+    display: none;
+    max-width: 550px;
+    padding: 25px;
+    background: rgba(255,255,255,.25);
+    border-radius: 25px;
+    margin: 20px;
+    line-height: 2;
+    animation: appear 1s;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: scale(.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    animation: floatUp linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.footer {
+    margin-top: 35px;
+    font-size: 14px;
+    opacity: .9;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="container">
+
+    <h1>Happy Birthday!</h1>
+
+    <div class="name">My Lovely Sister ❤️</div>
+
+    <p class="subtitle">
+        Today is all about YOU! 🌸
+    </p>
+
+    <div class="cake">🎂</div>
+
+    <div class="message">
+        Happy Birthday to the most amazing sister! 💗
+
+        <br><br>
+
+        May your life always be filled with happiness,
+        endless love, beautiful memories and magical moments.
+
+        <br><br>
+
+        You deserve all the beautiful things in this world.
+        Keep smiling and shining forever! ✨
+
+        <br><br>
+
+        Love You So Much! ❤️
+    </div>
+
+    <button onclick="openSurprise()">
+        🎁 Open Your Surprise
+    </button>
+
+    <div id="surprise">
+        <h2>💖 A Special Message For You 💖</h2>
+
+        <br>
+
+        You are not just my sister,
+        you are one of the most precious gifts in my life.
+
+        <br><br>
+
+        No matter what happens,
+        I will always be there for you.
+
+        <br><br>
+
+        Stay Happy, Stay Beautiful!
+
+        <br><br>
+
+        <h2>🎉 HAPPY BIRTHDAY! 🎉</h2>
+
+        <div style="font-size:55px">💗🌷🦋</div>
+    </div>
+
+    <div class="footer">
+        Made With Endless Love ❤️
+    </div>
+
+</div>
+
+<script>
+
+// Surprise button
+function openSurprise() {
+    document.getElementById("surprise").style.display = "block";
+
+    confetti();
+
+    document.getElementById("surprise")
+        .scrollIntoView({behavior:"smooth", block:"center"});
+}
+
+// Floating hearts
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = ["❤️","💗","💕","🌸","💖"][Math.floor(Math.random()*5)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random()*25) + "px";
+    heart.style.animationDuration = (4 + Math.random()*5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 9000);
+}
+
+setInterval(createHeart, 300);
+
+// Confetti
+function confetti() {
+    for(let i = 0; i < 100; i++) {
+        const item = document.createElement("div");
+
+        item.innerHTML = ["🎉","✨","💗","🌸"][Math.floor(Math.random()*4)];
+        item.style.position = "fixed";
+        item.style.left = Math.random()*100 + "vw";
+        item.style.top = "-30px";
+        item.style.fontSize = "25px";
+        item.style.zIndex = "10";
+        item.style.pointerEvents = "none";
+
+        document.body.appendChild(item);
+
+        const duration = 2000 + Math.random()*3000;
+
+        item.animate([
+            { transform: "translateY(0) rotate(0deg)", opacity: 1 },
+            { transform: `translateY(110vh) rotate(720deg)`, opacity: 0 }
+        ], {
+            duration: duration,
+            easing: "ease-in"
+        });
+
+        setTimeout(() => item.remove(), duration);
+    }
+}
+
+</script>
+
+</body>
+</html>
